@@ -26,9 +26,7 @@ class HorseTest {
         double distance = 100.0;
 
 
-        Throwable exception = assertThrows(IllegalArgumentException.class, () -> {
-            new Horse(name, speed, distance);
-        });
+        Throwable exception = assertThrows(IllegalArgumentException.class, () -> new Horse(name, speed, distance));
         assertEquals("Name cannot be null.", exception.getMessage());
 
     }
@@ -42,9 +40,7 @@ class HorseTest {
         double distance = 100.0;
 
 
-        Throwable exception = assertThrows(IllegalArgumentException.class, () -> {
-            new Horse(name, speed, distance);
-        });
+        Throwable exception = assertThrows(IllegalArgumentException.class, () -> new Horse(name, speed, distance));
         assertEquals("Name cannot be blank.", exception.getMessage());
 
     }
@@ -57,9 +53,7 @@ class HorseTest {
         double distance = 100.0;
 
 
-        Throwable exception = assertThrows(IllegalArgumentException.class, () -> {
-            new Horse(name, speed, distance);
-        });
+        Throwable exception = assertThrows(IllegalArgumentException.class, () -> new Horse(name, speed, distance));
         assertEquals("Speed cannot be negative.", exception.getMessage());
 
     }
@@ -74,9 +68,7 @@ class HorseTest {
         double distance = -100.0;
 
 
-        Throwable exception = assertThrows(IllegalArgumentException.class, () -> {
-            new Horse(name, speed, distance);
-        });
+        Throwable exception = assertThrows(IllegalArgumentException.class, () -> new Horse(name, speed, distance));
         assertEquals("Distance cannot be negative.", exception.getMessage());
 
     }
