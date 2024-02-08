@@ -13,7 +13,40 @@
         <maven.compiler.target>15</maven.compiler.target>
     </properties>
 
+    <developers>
+        <developer>
+            <name>Vadim Dubovskiy</name>
+            <email>Vadim_milo.net@mail.ru</email>
+            <url>https://github.com/Vadim23232323?tab=repositories</url>
+        </developer>
+    </developers>
+
+        <dependencyManagement>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.springframework.boot</groupId>
+                        <artifactId>spring-boot-dependencies</artifactId>
+                        <version>3.2.2</version>
+                        <type>pom</type>
+                        <scope>import</scope>
+                    </dependency>
+                </dependencies>
+            </dependencyManagement>
+
+
+
+
     <dependencies>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-params</artifactId>
+            <scope>test</scope>
+        </dependency>
 
     </dependencies>
 
