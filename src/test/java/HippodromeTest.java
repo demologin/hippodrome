@@ -1,4 +1,3 @@
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -11,10 +10,6 @@ import static org.junit.jupiter.api.Assertions.*;
 class HippodromeTest {
 
 
-    @BeforeEach
-    void setUp() {
-
-    }
 
     @Test
     @DisplayName("Ensure NullPointerException is thrown when is null")
