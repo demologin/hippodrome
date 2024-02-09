@@ -66,7 +66,7 @@ class HorseTest {
         assertEquals(100.0, horse.getDistance());
     }
     @Test
-    @DisplayName("Check that a method calls a method inside a method")
+    @DisplayName("Ensure that a method calls a method inside a method")
     void move() {
         try (MockedStatic<Horse> mocked = Mockito.mockStatic(Horse.class)) {
 
