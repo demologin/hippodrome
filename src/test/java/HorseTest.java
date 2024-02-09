@@ -1,123 +1,84 @@
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
+import org.mockito.MockedStatic;
+import org.mockito.Mockito;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class HorseTest {
 
-//    @BeforeAll
-//    public static void init(){
-//        System.out.println("BeforeAll init() method called");
-//    }
+
+    private Horse horse;
+
     @BeforeEach
     void setUp() {
-    }
-
-    @AfterEach
-    void tearDown() {
+        String name = "Vegas";
+        double speed = 10.0;
+        double distance = 100.0;
+        horse = new Horse(name, speed, distance);
     }
 
     @Test
-    public void nullHorse() {
-
-        String name = null;
-        double speed = 10.0;
-        double distance = 100.0;
-
-
-        Throwable exception = assertThrows(IllegalArgumentException.class, () -> new Horse(name, speed, distance));
+    @DisplayName("Ensure NullPointerException is thrown when name is null")
+    void nullHorse() {
+        Throwable exception = assertThrows(IllegalArgumentException.class, () -> new Horse(null, 10.0, 100.0));
         assertEquals("Name cannot be null.", exception.getMessage());
-
     }
-
 
     @ParameterizedTest
+    @DisplayName("Ensure IllegalArgumentException is thrown when name is blank")
     @ValueSource(strings = {"", " ", "\t", "\n", "\r", "\t\n\r", "\t  \n"})
-    public void emptyHorse(String name) {
-
-        double speed = 10.0;
-        double distance = 100.0;
-
-
-        Throwable exception = assertThrows(IllegalArgumentException.class, () -> new Horse(name, speed, distance));
+    void emptyHorse(String name) {
+        Throwable exception = assertThrows(IllegalArgumentException.class, () -> new Horse(name, 10.0, 100.0));
         assertEquals("Name cannot be blank.", exception.getMessage());
-
     }
 
     @Test
-    public void negativeSpeedHorse() {
-
-        String name = "Maksim";
-        double speed = -10.0;
-        double distance = 100.0;
-
-
-        Throwable exception = assertThrows(IllegalArgumentException.class, () -> new Horse(name, speed, distance));
+    @DisplayName("Ensure IllegalArgumentException is thrown when speed is negative")
+    void negativeSpeedHorse() {
+        Throwable exception = assertThrows(IllegalArgumentException.class, () -> new Horse("Vegas", -10.0, 100.0));
         assertEquals("Speed cannot be negative.", exception.getMessage());
-
     }
 
-
-
     @Test
-    public void negativeDistanceHorse() {
-
-        String name = "Maksim";
-        double speed = 10.0;
-        double distance = -100.0;
-
-
-        Throwable exception = assertThrows(IllegalArgumentException.class, () -> new Horse(name, speed, distance));
+    @DisplayName("Ensure IllegalArgumentException is thrown when distance is negative")
+    void negativeDistanceHorse() {
+        Throwable exception = assertThrows(IllegalArgumentException.class, () -> new Horse("Vegas", 10.0, -100.0));
         assertEquals("Distance cannot be negative.", exception.getMessage());
-
     }
 
-
-
-
     @Test
+    @DisplayName("Ensure getName returns correct name")
     void getName() {
-
-
-        String name = "Maksim";
-        double speed = 10.0;
-        double distance = 100.0;
-
-        Horse horse = new Horse(name, speed, distance);
-
-        assertEquals(horse.getName(),"Maksim");
-
+        assertEquals("Vegas", horse.getName());
     }
 
     @Test
+    @DisplayName("Ensure getSpeed returns correct speed")
     void getSpeed() {
-        String name = "Maksim";
-        double speed = 10.0;
-        double distance = 100.0;
-
-        Horse horse = new Horse(name, speed, distance);
-
-        assertEquals(horse.getSpeed(),10.0);
+        assertEquals(10.0, horse.getSpeed());
     }
 
     @Test
+    @DisplayName("Ensure getDistance returns correct distance")
     void getDistance() {
-
-        String name = "Maksim";
-        double speed = 10.0;
-        double distance = 100.0;
-
-        Horse horse = new Horse(name, speed, distance);
-
-        assertEquals(horse.getDistance(),100.0);
+        assertEquals(100.0, horse.getDistance());
     }
-
     @Test
+    @DisplayName("Check that a method calls a method inside a method")
     void move() {
+        try (MockedStatic<Horse> mocked = Mockito.mockStatic(Horse.class)) {
+
+            mocked.when(() -> Horse.getRandomDouble(0.2, 0.9)).thenReturn(0.5);
+
+            horse.move();
+
+            mocked.verify(() -> Horse.getRandomDouble(0.2, 0.9));
+
+            assertEquals(105, horse.getDistance());
+        }
+
     }
 
-    @Test
-    void getRandomDouble() {
-    }
 }
