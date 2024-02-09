@@ -1,7 +1,8 @@
+import lombok.extern.slf4j.Slf4j;
+
 import static java.util.Objects.isNull;
 
 public class Horse {
-
     private final String name;
     private final double speed;
     private double distance;
