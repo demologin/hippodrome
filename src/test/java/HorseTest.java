@@ -6,7 +6,9 @@ class HorseTest {
 
     @Test
     public void testHorseConstructorWithNullName() {
-        assertThrows(IllegalArgumentException.class, () -> new Horse(null, 2));
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class,
+                () -> new Horse(null, 2));
+        assertEquals("Name cannot be null.", exception.getMessage());
     }
 
     @Test
