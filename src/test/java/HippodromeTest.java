@@ -1,4 +1,5 @@
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
@@ -10,13 +11,15 @@ import static org.junit.jupiter.api.Assertions.*;
 class HippodromeTest {
 
     @Test
-    void nullArgumentException() {
+    @DisplayName("IllegalArgumentException if the parameter is null")
+    void whenParamIsNullThrowIAE() {
         assertThrows(IllegalArgumentException.class, ()
                 -> new Hippodrome(null));
     }
 
     @Test
-    void nullHorseNameExceptionMessage() {
+    @DisplayName("Message if the parameter is null")
+    void whenParamIsNullThenExceptionMessage() {
         Throwable exception = assertThrows(IllegalArgumentException.class, ()
                 -> new Hippodrome(null)
         );
@@ -26,13 +29,15 @@ class HippodromeTest {
     }
 
     @Test
-    void emptyHorsesList() {
+    @DisplayName("IllegalArgumentException if the horses list is empty")
+    void WhenHorsesListIsEmptyThrowIAE() {
         List<Horse> horseList = new ArrayList<>();
         assertThrows(IllegalArgumentException.class, () -> new Hippodrome(horseList));
     }
 
     @Test
-    void emptyHorsesListMessage() {
+    @DisplayName("IllegalArgumentException if the horses list is empty")
+    void WhenHorsesListIsEmptyThenMessage() {
         List<Horse> horseList = new ArrayList<>();
         Throwable exception = assertThrows(IllegalArgumentException.class, () -> new Hippodrome(horseList));
         String expectedMessage = "Horses cannot be empty.";
@@ -41,6 +46,7 @@ class HippodromeTest {
     }
 
     @Test
+    @DisplayName("getHorses test")
     void getHorses() {
         List<Horse> horseList = new ArrayList<>();
         for (int i = 0; i < 30; i++) {
@@ -51,6 +57,7 @@ class HippodromeTest {
     }
 
     @Test
+    @DisplayName("move test")
     void move() {
         List<Horse> horseList = new ArrayList<>();
         for (int i = 0; i < 50; i++) {
@@ -64,10 +71,11 @@ class HippodromeTest {
     }
 
     @Test
+    @DisplayName("winner test")
     void getWinner() {
         List<Horse> horses = new ArrayList<>();
         for (int i = 0; i < 30; i++) {
-            horses.add(new Horse(String.format("Horse №%d", i+1), 1.0d,i + 1));
+            horses.add(new Horse(String.format("Horse №%d", i + 1), 1.0d, i + 1));
         }
         Hippodrome hippodrome = new Hippodrome(horses);
         assertEquals(30.0d, hippodrome.getWinner().getDistance());
