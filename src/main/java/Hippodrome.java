@@ -6,18 +6,21 @@ import java.util.List;
 
 import static java.util.Objects.isNull;
 
+@Slf4j
 public class Hippodrome {
 
     private final List<Horse> horses;
 
     public Hippodrome(List<Horse> horses) {
         if (isNull(horses)) {
+            log.error("Horses list is null");
             throw new IllegalArgumentException("Horses cannot be null.");
         } else if (horses.isEmpty()) {
+            log.error("Horses list is empty");
             throw new IllegalArgumentException("Horses cannot be empty.");
         }
-
         this.horses = horses;
+        log.debug("Создание Hippodrome, лошадей {}", horses.size());
     }
 
     public List<Horse> getHorses() {
