@@ -39,7 +39,7 @@ class HorseTest {
 
     @ParameterizedTest
     @NullSource
-    void testHorseWhenFirstArgEqNullCorrectOfMessageIAE(String name) {
+    void testHorseWhenNameEqNullCorrectOfMessageIAE(String name) {
         //Check that when passing null as the first parameter to the constructor, the thrown exception will contain the message "Name cannot be null."
         // must be IAE with that message
         IllegalArgumentException expected = new IllegalArgumentException("Name cannot be null.");
@@ -55,7 +55,7 @@ class HorseTest {
             "\u2001", "\u2002", "\u2003", "\u2004", "\u2005",
             "\u2006", "\u2008", "\u2009", "\u3000", "\u000B",
             "\u000C", "\u001C", "\u001D", "\u001E", "\u001F"})
-    void testHorseWhenFirstParamIsSpaceThenThrowIAE(String name) {
+    void testHorseWhenNameParamIsSpaceThenThrowIAE(String name) {
         //Check that when passing an empty string or a string containing only whitespace characters (space, tab, etc.) as the first parameter to the constructor, the thrown exception will contain the message "Name cannot be blank.";
         assertThrows(IllegalArgumentException.class, () -> new Horse(name, 2.4));
     }
@@ -65,7 +65,7 @@ class HorseTest {
             "\u2001", "\u2002", "\u2003", "\u2004", "\u2005",
             "\u2006", "\u2008", "\u2009", "\u3000", "\u000B",
             "\u000C", "\u001C", "\u001D", "\u001E", "\u001F"})
-    void testHorseIAEMessageWhenFirstParamIsBlank(String name) {
+    void testHorseIAEMessageWhenNameParamIsBlank(String name) {
         //Check that when passing an empty string or a string containing only whitespace characters (space, tab, etc.) as the first parameter to the constructor, the thrown exception will contain the message "Name cannot be blank.";
         //expected message from IAE
         IllegalArgumentException expected = new IllegalArgumentException("Name cannot be blank.");
@@ -78,14 +78,14 @@ class HorseTest {
     @ParameterizedTest
     @CsvSource(value = {"-1.32,23.2", "-52.32,10.0", "23.4,-43.2","3.2,-12.2",
     "-2.4,-5.0"})
-    void testHorseWhenSecondAndThreeArgIsNegativeThenThrowIAE(double speed, double distance) {
+    void testHorseWhenSpeedAndDistanceIsNegativeThenThrowIAE(double speed, double distance) {
         //Check, when give to constructor second param negative number, will throw IllegalArgumentException;
         assertThrows(IllegalArgumentException.class, () -> new Horse("Pegaus", speed, distance));
     }
 
     @ParameterizedTest
     @CsvSource(value = {"-1.23", "-32.2", "-0.1", "-5.5"})
-    void testHorseWhenSecondArgNegativeThenIAEWithCorrectMessage(double speed) {
+    void testHorseWhenSpeedNegativeThenIAEWithCorrectMessage(double speed) {
         //Check that when passing a negative number as the second parameter to the constructor, the thrown exception will contain the message "Speed cannot be negative.";
         //expected IAE message
         IllegalArgumentException expected = new IllegalArgumentException("Speed cannot be negative.");
@@ -97,7 +97,7 @@ class HorseTest {
 
     @ParameterizedTest
     @CsvSource(value = {"-1.23", "-32.2", "-0.1", "-5.5"})
-    void testHorseWhenThirdArgNegativeThenIAEWithCorrectMessage(double distance) {
+    void testHorseWhenDistanceNegativeThenIAEWithCorrectMessage(double distance) {
         //Check that when passing a negative number as the third parameter to the constructor, the thrown exception will contain the message "Distance cannot be negative.";
         //expected IAE message
         IllegalArgumentException expected = new IllegalArgumentException("Distance cannot be negative.");
