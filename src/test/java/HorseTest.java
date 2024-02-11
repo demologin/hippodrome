@@ -11,7 +11,8 @@ class HorseTest {
     @Test
     void nullHorseNameException() {
         String nullName = null;
-        Assertions.assertThrows(IllegalArgumentException.class, () -> new Horse(nullName, 1, 1));
+        Assertions.assertThrows(IllegalArgumentException.class, () ->
+                new Horse(nullName, 1, 1));
     }
 
     @Test
@@ -120,9 +121,9 @@ class HorseTest {
         try (MockedStatic<Horse> mockObject =  mockStatic(Horse.class)) {
             mockObject.when(() -> Horse.getRandomDouble(0.2, 0.9)).thenReturn(arg);
             Horse horse = new Horse("Name", 1, 1);
-            Double probMove = horse.getDistance() + horse.getSpeed() * Horse.getRandomDouble(0.2, 0.9);
+            Double moveValue = horse.getDistance() + horse.getSpeed() * Horse.getRandomDouble(0.2, 0.9);
             horse.move();
-            assertEquals(probMove, horse.getDistance());
+            assertEquals(moveValue, horse.getDistance());
         }
     }
 }
