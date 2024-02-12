@@ -22,12 +22,10 @@ public class Main {
             watch(hippodrome);
             TimeUnit.MILLISECONDS.sleep(200);
         }
-
         String winnerName = hippodrome.getWinner().getName();
         System.out.println(winnerName + " wins!");
         logger.info("Окончание скачек. Победитель : {}", winnerName);
     }
-
     private static void watch(Hippodrome hippodrome) throws Exception {
         hippodrome.getHorses().stream()
                 .map(horse -> ".".repeat((int) horse.getDistance()) + horse.getName())
