@@ -6,7 +6,6 @@ import java.util.Comparator;
 import java.util.List;
 
 import static java.util.Objects.isNull;
-import static org.slf4j.LoggerFactory.getLogger;
 
 public class Hippodrome {
 
