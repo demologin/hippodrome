@@ -53,7 +53,7 @@ public class HorseTest {
 
     @Test
     public void testGetWinner() {
-        // Создание списка из 3 лошадей с разными значениями distance
+        // Creating a list of 3 horses with different values distance
         List<Horse> horses = Arrays.asList(
                 new Horse("Horse1", 10, 100),
                 new Horse("Horse2", 15, 150),
@@ -68,8 +68,8 @@ public class HorseTest {
         Random random = new Random();
         for (int i = 1; i <= 30; i++) {
             String name = "Horse" + i;
-            double speed = 5 + random.nextDouble() * 20; // Генерация случайной скорости от 5 до 25
-            double distance = random.nextInt(1000); // Генерация случайной дистанции до 1000
+            double speed = 5 + random.nextDouble() * 20; // Generate random speed from 5 to 25
+            double distance = random.nextInt(1000); // Generate random distance up to 1000
             horses.add(new Horse(name, speed, distance));
         }
         return horses;

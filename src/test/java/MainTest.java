@@ -15,13 +15,13 @@ public class MainTest {
     @Test
     @Timeout(value = 22, unit = TimeUnit.SECONDS)
     public void testMainExecutionTime() {
-        // Подготовка кода для запуска метода main и проверки времени его выполнения
+        // Preparing the code to run the main method and check its execution time
         SingleTestExecutor.Executable executable = () -> {
-            // Код для запуска метода main
+            // Code to run the main method
             Main.main(new String[]{});
         };
 
-        // Проверка времени выполнения метода main
+        // Checking the execution time of the main method
         Assertions.assertTimeoutPreemptively(Duration.ofSeconds(22), (Executable) executable);
     }
 }
