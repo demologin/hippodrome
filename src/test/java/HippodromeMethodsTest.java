@@ -7,14 +7,14 @@ class HippodromeMethodsTest {
 
     @Test
     void getHorsesReturnListHorse() {
-        List<Horse> horses = getHorseList(30);
+        List<Horse> horses = getHorseList();
         Hippodrome hippodrome = new Hippodrome(horses);
         Assertions.assertEquals(horses, hippodrome.getHorses());
     }
 
     @Test
     void moveCausesHorseMethodMove() {
-        List<Horse> horses = getMockHorseList(50);
+        List<Horse> horses = getMockHorseList();
         Hippodrome hippodrome = new Hippodrome(horses);
         hippodrome.move();
         for (Horse horse : horses) {
@@ -30,17 +30,17 @@ class HippodromeMethodsTest {
         Hippodrome hippodrome = new Hippodrome(horses);
         Assertions.assertEquals(horses.get(0).getDistance(), hippodrome.getWinner().getDistance());
     }
-    private List<Horse> getHorseList(int numberOfHorses) {
+    private List<Horse> getHorseList() {
         List<Horse> horseList = new ArrayList<>();
-        for (int i = 0; i < numberOfHorses; i++) {
+        for (int i = 0; i < 30; i++) {
             horseList.add(new Horse(String.valueOf(i), i));
         }
         return horseList;
     }
 
-    private List<Horse> getMockHorseList(int numberOfHorses) {
+    private List<Horse> getMockHorseList() {
         List<Horse> mockHorseList = new ArrayList<>();
-        for (int i = 0; i < numberOfHorses; i++) {
+        for (int i = 0; i < 50; i++) {
             mockHorseList.add(Mockito.mock(Horse.class));
         }
         return mockHorseList;
