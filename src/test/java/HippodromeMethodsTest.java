@@ -23,7 +23,7 @@ class HippodromeMethodsTest {
     }
 
     @Test
-    void getWinnerReturnHorseWithBiggestDistance() {
+    void getWinnerReturnHorseWithMaxDistance() {
         List<Horse> horses = new ArrayList<>();
         horses.add(new Horse("1", 1, 5000));
         horses.add(new Horse("2", 1));
