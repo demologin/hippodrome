@@ -2,8 +2,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import lombok.extern.log4j.Log4j2;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+
 
 @Log4j2
 public class Main {
