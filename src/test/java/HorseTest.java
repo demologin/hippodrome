@@ -8,27 +8,19 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class HorseTest {
 
     private Horse horse;
-    private String testHorseName = "Gorbunok";
-
-    @BeforeEach
-    @Disabled
-    void setUp() {
-    }
-
-    @AfterEach
-    @Disabled
-    void tearDown() {
-    }
+    private final String testHorseName = "Gorbunok";
 
     /**
      * When: horse name is null
      * Result: IllegalArgumentException("Name cannot be null.")
      */
     @Test
-    @DisplayName("Test: horse name is null")
+    @Order(1)
+    @DisplayName("HorseTest: name is null")
     void create_horseWithNullName() {
         Throwable exception = assertThrows(
             IllegalArgumentException.class,
@@ -44,7 +36,8 @@ class HorseTest {
      * Result: IllegalArgumentException("Name cannot be blank.")
      */
     @ParameterizedTest
-    @DisplayName("Test: horse name is blank")
+    @Order(2)
+    @DisplayName("HorseTest: name is blank")
     @ValueSource
         (strings = {"", " ", "\t", "\n", "\u000B", "\f", "\r",
                     "\u001C", "\u001D", "\u001E", "\u001F"})
@@ -59,7 +52,8 @@ class HorseTest {
     }
 
     @Test
-    @DisplayName("Test: horse speed is negative")
+    @Order(3)
+    @DisplayName("HorseTest: speed is negative")
     void create_HorseWithNegativeSpeed() {
         Throwable exception = assertThrows(
             IllegalArgumentException.class,
@@ -71,7 +65,8 @@ class HorseTest {
     }
 
     @Test
-    @DisplayName("Test: horse distance is negative")
+    @Order(4)
+    @DisplayName("HorseTest: distance is negative")
     void create_HorseWithNegativeDistance() {
         Throwable exception = assertThrows(
             IllegalArgumentException.class,
@@ -83,14 +78,16 @@ class HorseTest {
     }
 
     @Test
-    @DisplayName("Test: horse getName")
+    @Order(5)
+    @DisplayName("HorseTest: getName")
     void test_getName() {
         horse = new Horse(testHorseName, 10.0, 10.0);
         assertEquals(testHorseName, horse.getName());
     }
 
     @Test
-    @DisplayName("Test: horse getSpeed")
+    @Order(6)
+    @DisplayName("HorseTest: getSpeed")
     void test_getSpeed() {
         double expectedSpeed = 10.0;
         horse = new Horse(testHorseName, expectedSpeed, 10.0);
@@ -98,23 +95,25 @@ class HorseTest {
     }
 
     @Test
-    @DisplayName("Test: horse getDistance")
+    @Order(7)
+    @DisplayName("HorseTest: getDistance")
     void test_getDistance() {
         double expectedDistance = 10.0;
         horse = new Horse(testHorseName, 10.0, expectedDistance);
         assertEquals(expectedDistance, horse.getDistance());
-
     }
 
     @Test
-    @DisplayName("Test: horse getDistance with two parameters")
+    @Order(8)
+    @DisplayName("HorseTest: getDistance with two parameters")
     void test_getDistanceWithTwoParameters() {
         horse = new Horse("Gorbunok", 10.0);
         assertEquals(0, horse.getDistance());
     }
 
     @Test
-    @DisplayName("Test: horseMove")
+    @Order(9)
+    @DisplayName("HorseTest: move")
     @ExtendWith(MockitoExtension.class)
     void test_move() {
         double speed = 10;
@@ -137,9 +136,5 @@ class HorseTest {
             // проверяем, что метод getRandomDouble был вызван с параметрами 0.2 и 0.9
             mockedHorse.verify(() -> Horse.getRandomDouble(0.2, 0.9));//
         }
-    }
-
-    @Test
-    void getRandomDouble() {
     }
 }
