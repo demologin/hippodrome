@@ -1,5 +1,6 @@
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -36,7 +37,17 @@ class HippodromeTest {
     }
 
     @Test
-    void getHorses() {
+    public void testGetHorses() {
+        List<Horse> expectedHorses = new ArrayList<>();
+        for (int i = 0; i < 30; i++) {
+            expectedHorses.add(new Horse("Horse " + i, 2));
+        }
+        Hippodrome hippodrome = new Hippodrome(expectedHorses);
+
+        List<Horse> actualHorses = hippodrome.getHorses();
+
+        assertEquals(expectedHorses.size(), actualHorses.size());
+        assertIterableEquals(expectedHorses, actualHorses);
     }
 
     @Test
