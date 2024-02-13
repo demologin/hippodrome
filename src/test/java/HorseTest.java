@@ -1,5 +1,6 @@
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
 import org.mockito.MockedStatic;
 import org.mockito.Mockito;
@@ -36,6 +37,7 @@ class HorseTest {
                 () -> new Horse("name", 2, -10));
         assertEquals("Distance cannot be negative.", exception.getMessage());
     }
+
     @Test
     public void testGetName() {
         String expectedName = "Bucephalus"; // ожидаемое имя
@@ -59,6 +61,7 @@ class HorseTest {
         double actualDistance = horse.getDistance();
         assertEquals(expectedDistance, actualDistance);
     }
+
     @Test
     public void testGetDistanceWithTwoParameters() {
         Horse horse = new Horse("Horse", 2);
@@ -68,11 +71,26 @@ class HorseTest {
 
     @Test
     void testMove() {
-        MockedStatic<Horse> mockedStatic = Mockito.mockStatic(Horse.class);
-        Horse horse = new Horse("Horse", 2);
-        horse.move();
-        mockedStatic.verify(() -> Horse.getRandomDouble(0.2, 0.9));
-        // выше проверили, что метод getRandomDouble был вызван внутри метода move с параметрами 0.2-0.9
+        try (MockedStatic<Horse> mockedStatic = Mockito.mockStatic(Horse.class)) {
+            Horse horse = new Horse("Horse", 2);
+            horse.move();
+            mockedStatic.verify(() -> Horse.getRandomDouble(0.2, 0.9));
+            // выше проверили, что метод getRandomDouble был вызван внутри метода move с параметрами 0.2-0.9
+        }
+    }
+
+    @ParameterizedTest
+    @CsvSource({"0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9"})
+    public void testMoveWithFormula(double randomValue) {
+        try (MockedStatic<Horse> mockedStatic = Mockito.mockStatic(Horse.class)) {
+            // мокируем статический метод getRandomDouble
+            mockedStatic.when(() -> Horse.getRandomDouble(0.2, 0.9)).thenReturn(randomValue);
+            Horse horse = new Horse("Horse", 2);
+            horse.move();
+            // проверяем, что значение дистанции вычислено верно, сравнивая ожидаемую и реальную
+            double expectedDistance = 2 * randomValue;
+            assertEquals(expectedDistance, horse.getDistance());
+        }
     }
 
     @Test
