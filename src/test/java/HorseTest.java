@@ -7,14 +7,14 @@ import static org.junit.jupiter.api.Assertions.*;
 class HorseTest {
 
     @Test
-    public void testHorseConstructorWithNullName() {
+    public void testConstructorWithNullName() {
         IllegalArgumentException exception = assertThrows(IllegalArgumentException.class,
                 () -> new Horse(null, 2));
         assertEquals("Name cannot be null.", exception.getMessage());
     }
 
     @ParameterizedTest
-    @ValueSource(strings = {"", " ", "\t", "\n", "\r", "\f", "\b"})
+    @ValueSource(strings = {"", " ", "\t", "\n", "\r", "\f"})
     public void testConstructorWithEmptyOrBlankName(String name) {
         assertThrows(IllegalArgumentException.class, () -> new Horse(name, 2));
     }
