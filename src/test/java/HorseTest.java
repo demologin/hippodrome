@@ -23,7 +23,16 @@ class HorseTest {
 
     @Test
     public void testConstructorWithNegativeSpeed() {
-        assertThrows(IllegalArgumentException.class, () -> new Horse("name", -3));
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class,
+                () -> new Horse("name", -3));
+        assertEquals("Speed cannot be negative.", exception.getMessage());
+    }
+
+    @Test
+    public void testConstructorWithNegativeDistance() {
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class,
+                () -> new Horse("name", 2, -10));
+        assertEquals("Distance cannot be negative.", exception.getMessage());
     }
     @Test
     void getName() {
