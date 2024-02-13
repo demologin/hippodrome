@@ -92,8 +92,4 @@ class HorseTest {
             assertEquals(expectedDistance, horse.getDistance());
         }
     }
-
-    @Test
-    void getRandomDouble() {
-    }
 }
