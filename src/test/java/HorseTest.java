@@ -70,7 +70,7 @@ class HorseTest {
     }
 
     @Test
-    void testMove() {
+    public void testMove() {
         try (MockedStatic<Horse> mockedStatic = Mockito.mockStatic(Horse.class)) {
             Horse horse = new Horse("Horse", 2);
             horse.move();
