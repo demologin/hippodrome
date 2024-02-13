@@ -11,6 +11,10 @@ class HorseTest {
 
     @Test
     public void testConstructorWithNullName() {
+        assertThrows(IllegalArgumentException.class, () -> new Horse(null, 2));
+    }
+    @Test
+    public void testConstructorWithNullNameAndText() {
         IllegalArgumentException exception = assertThrows(IllegalArgumentException.class,
                 () -> new Horse(null, 2));
         assertEquals("Name cannot be null.", exception.getMessage());
@@ -19,6 +23,12 @@ class HorseTest {
     @ParameterizedTest
     @ValueSource(strings = {"", " ", "\t", "\n", "\r", "\f"})
     public void testConstructorWithEmptyOrBlankName(String name) {
+        assertThrows(IllegalArgumentException.class, () -> new Horse(name, 2));
+    }
+
+    @ParameterizedTest
+    @ValueSource(strings = {"", " ", "\t", "\n", "\r", "\f"})
+    public void testConstructorWithEmptyOrBlankNameAndText(String name) {
         IllegalArgumentException exception = assertThrows(IllegalArgumentException.class,
                 () -> new Horse(name, 2));
         assertEquals("Name cannot be blank.", exception.getMessage());
