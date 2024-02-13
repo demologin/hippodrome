@@ -16,7 +16,9 @@ class HorseTest {
     @ParameterizedTest
     @ValueSource(strings = {"", " ", "\t", "\n", "\r", "\f"})
     public void testConstructorWithEmptyOrBlankName(String name) {
-        assertThrows(IllegalArgumentException.class, () -> new Horse(name, 2));
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class,
+                () -> new Horse(name, 2));
+        assertEquals("Name cannot be blank.", exception.getMessage());
     }
 
     @Test
