@@ -28,6 +28,14 @@ class HippodromeTest {
     }
 
     @Test
+    public void testConstructorWithEmptyListAndText () {
+        List<Horse> emptyList = Collections.emptyList();
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class,
+                () -> new Hippodrome(emptyList));
+        assertEquals("Horses cannot be empty.", exception.getMessage());
+    }
+
+    @Test
     void getHorses() {
     }
 
