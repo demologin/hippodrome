@@ -36,14 +36,18 @@ class HorseTest {
     }
     @Test
     void testGetName() {
-        String expectedName = "Bucephalus"; // ожидаемое ия
+        String expectedName = "Bucephalus"; // ожидаемое имя
         Horse horse = new Horse(expectedName, 2); // создаем экземпляр лошади с ожидаемым именем
         String actualName = horse.getName(); // получаем имя лошади с помощью getName
         assertEquals(expectedName, actualName); // сравниваем ожидаемое и получаемое
     }
 
     @Test
-    void getSpeed() {
+    void testGetSpeed() {
+        double expectedSpeed = 3;
+        Horse horse = new Horse("Horse", expectedSpeed);
+        double actualSpeed = horse.getSpeed();
+        assertEquals(expectedSpeed, actualSpeed);
     }
 
     @Test
