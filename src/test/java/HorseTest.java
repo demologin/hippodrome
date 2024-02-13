@@ -22,6 +22,10 @@ class HorseTest {
     }
 
     @Test
+    public void testConstructorWithNegativeSpeed() {
+        assertThrows(IllegalArgumentException.class, () -> new Horse("name", -3));
+    }
+    @Test
     void getName() {
     }
 
