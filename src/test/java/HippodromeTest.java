@@ -10,6 +10,13 @@ class HippodromeTest {
     }
 
     @Test
+    public void testConstructorWithNullAndText () {
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class,
+                () -> new Hippodrome(null));
+        assertEquals("Horses cannot be null.", exception.getMessage());
+    }
+
+    @Test
     void getHorses() {
     }
 
