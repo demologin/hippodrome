@@ -1,5 +1,8 @@
 import org.junit.jupiter.api.Test;
 
+import java.util.Collections;
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class HippodromeTest {
@@ -14,6 +17,14 @@ class HippodromeTest {
         IllegalArgumentException exception = assertThrows(IllegalArgumentException.class,
                 () -> new Hippodrome(null));
         assertEquals("Horses cannot be null.", exception.getMessage());
+    }
+
+    @Test
+    public void testConstructorWithEmptyList () {
+        List<Horse> emptyList = Collections.emptyList();
+        //создаем пустой список
+        assertThrows(IllegalArgumentException.class, () -> new Hippodrome(emptyList));
+        //проверяем, что при передаче пустого списка в конструктор Ипподрома выбросится IllegalArgumentException
     }
 
     @Test
