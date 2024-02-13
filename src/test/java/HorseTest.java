@@ -35,7 +35,7 @@ class HorseTest {
         assertEquals("Distance cannot be negative.", exception.getMessage());
     }
     @Test
-    void testGetName() {
+    public void testGetName() {
         String expectedName = "Bucephalus"; // ожидаемое имя
         Horse horse = new Horse(expectedName, 2); // создаем экземпляр лошади с ожидаемым именем
         String actualName = horse.getName(); // получаем имя лошади с помощью getName
@@ -43,7 +43,7 @@ class HorseTest {
     }
 
     @Test
-    void testGetSpeed() {
+    public void testGetSpeed() {
         double expectedSpeed = 3;
         Horse horse = new Horse("Horse", expectedSpeed);
         double actualSpeed = horse.getSpeed();
@@ -51,7 +51,17 @@ class HorseTest {
     }
 
     @Test
-    void getDistance() {
+    public void testGetDistanceWithThreeParameters() {
+        double expectedDistance = 10;
+        Horse horse = new Horse("Horse", 2, expectedDistance);
+        double actualDistance = horse.getDistance();
+        assertEquals(expectedDistance, actualDistance);
+    }
+    @Test
+    public void testGetDistanceWithTwoParameters() {
+        Horse horse = new Horse("Horse", 2);
+        double actualDistance = horse.getDistance();
+        assertEquals(0L, actualDistance);
     }
 
     @Test
