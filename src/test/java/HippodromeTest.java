@@ -1,6 +1,7 @@
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -72,6 +73,17 @@ class HippodromeTest {
     }
 
     @Test
-    void getWinner() {
+    void testGetWinner() {
+        //создаем 3 лошадей с разной дистанцией
+        Horse horse1 = new Horse("Horse 1", 2, 100);
+        Horse horse2 = new Horse("Horse 2", 2.2, 150);
+        Horse horse3 = new Horse("Horse 3", 2.4, 200);
+
+        //создаем список лошадей, добавляем туда лошадей, создаем экземпляр импподрома с этим списком
+        List<Horse> horses = Arrays.asList(horse1, horse2, horse3);
+        Hippodrome hippodrome = new Hippodrome(horses);
+
+        //проверяем, что метод getWinner возвращает лошадь с самым большим значением дистанции
+        assertEquals(horse3, hippodrome.getWinner());
     }
 }
