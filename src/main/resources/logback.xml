@@ -10,6 +10,7 @@
     <property name="LOG_DIR" value="logs" />
     <appender name="ROLLING_FILE" class="RollingFileAppender">
         <file>${LOG_DIR}/hippodrome.log</file>
+
         <encoder class="PatternLayoutEncoder">
             <pattern>%date %level [%thread] %logger{36}:%line - %msg%n</pattern>
         </encoder>
