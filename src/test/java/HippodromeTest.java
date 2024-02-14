@@ -5,6 +5,8 @@ import java.util.Collections;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
 
 class HippodromeTest {
 
@@ -51,7 +53,22 @@ class HippodromeTest {
     }
 
     @Test
-    void move() {
+    void testMoveForAll50Horses() {
+        //создаем список моков лошадей
+        List<Horse> horseMocks = new ArrayList<>();
+        for (int i = 0; i < 50; i++) {
+            Horse horseMock = mock(Horse.class);
+            horseMocks.add(horseMock);
+        }
+        //создаем экземпляр класса Hippodrome с моками лошадей
+        Hippodrome hippodrome = new Hippodrome(horseMocks);
+        //вызываем у этого экземпляра метод move
+        hippodrome.move();
+
+        //проверяем, что метод вызван у всех лошадей в списке
+        for (Horse horseMock : horseMocks) {
+            verify(horseMock).move();
+        }
     }
 
     @Test
