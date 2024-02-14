@@ -1,6 +1,8 @@
+import lombok.extern.log4j.Log4j2;
+
 import java.util.List;
 import java.util.concurrent.TimeUnit;
-
+@Log4j2
 public class Main {
 
     public static void main(String[] args) throws Exception {
@@ -15,6 +17,8 @@ public class Main {
         );
         Hippodrome hippodrome = new Hippodrome(horses);
 
+        log.info("Start");
+
         for (int i = 0; i < 100; i++) {
             hippodrome.move();
             watch(hippodrome);
@@ -23,6 +27,7 @@ public class Main {
 
         String winnerName = hippodrome.getWinner().getName();
         System.out.println(winnerName + " wins!");
+        log.info("Racing is over. " + winnerName + " wins");
     }
 
     private static void watch(Hippodrome hippodrome) throws Exception {
