@@ -6,7 +6,7 @@ class MainTest {
     @Disabled
     @Test
     @Timeout(22)
-    void main() throws Exception {
+    void whenRunMain_MethodRunsFasterThan22sec() throws Exception {
         Main.main(null);
 //        Assertions.assertThrows(Exception.class, () -> Main.main(null));
     }
