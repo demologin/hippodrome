@@ -36,10 +36,6 @@ public class Horse {
         this(name, speed, 0);
     }
 
-    public static double getRandomDouble(double min, double max) {
-        return (Math.random() * (max - min)) + min;
-    }
-
     public String getName() {
         return name;
     }
@@ -54,5 +50,9 @@ public class Horse {
 
     public void move() {
         distance += speed * getRandomDouble(0.2, 0.9);
+    }
+
+    public static double getRandomDouble(double min, double max) {
+        return (Math.random() * (max - min)) + min;
     }
 }
