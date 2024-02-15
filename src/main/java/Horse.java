@@ -1,7 +1,7 @@
-import lombok.extern.log4j.Log4j2;
+import lombok.extern.slf4j.Slf4j;
 
 import static java.util.Objects.isNull;
-@Log4j2
+@Slf4j
 public class Horse {
 
     private final String name;
