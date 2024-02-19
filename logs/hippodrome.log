@@ -1,0 +1,80 @@
+2024-02-19 22:38:12,689 DEBUG Horse: Создание Horse, имя [Bucephalus], скорость [2.4]
+2024-02-19 22:38:12,697 DEBUG Horse: Создание Horse, имя [Ace of Spades], скорость [2.5]
+2024-02-19 22:38:12,699 DEBUG Horse: Создание Horse, имя [Zephyr], скорость [2.6]
+2024-02-19 22:38:12,699 DEBUG Horse: Создание Horse, имя [Blaze], скорость [2.7]
+2024-02-19 22:38:12,700 DEBUG Horse: Создание Horse, имя [Lobster], скорость [2.8]
+2024-02-19 22:38:12,701 DEBUG Horse: Создание Horse, имя [Pegasus], скорость [2.9]
+2024-02-19 22:38:12,701 DEBUG Horse: Создание Horse, имя [Cherry], скорость [3.0]
+2024-02-19 22:38:12,704 DEBUG Hippodrome: Создание Hippodrome, лошадей [7]
+2024-02-19 22:38:12,705 INFO  Main: Начало скачек. Количество участников: 7
+2024-02-19 22:38:33,546 INFO  Main: Окончание скачек. Победитель: Pegasus
+2024-02-19 22:39:13,784 INFO  Main: Начало скачек. Количество участников: 7
+2024-02-19 22:39:34,481 INFO  Main: Окончание скачек. Победитель: Cherry
+2024-02-19 22:40:38,362 INFO  Main: Начало скачек. Количество участников: 7
+2024-02-19 22:40:58,979 INFO  Main: Окончание скачек. Победитель: Pegasus
+2024-02-19 22:42:25,920 ERROR Horse: Speed is negative
+2024-02-19 22:42:26,205 ERROR Horse: Name is blank
+2024-02-19 22:42:26,257 ERROR Horse: Name is blank
+2024-02-19 22:42:26,506 ERROR Horse: Name is blank
+2024-02-19 22:42:26,535 ERROR Horse: Name is blank
+2024-02-19 22:42:26,550 ERROR Horse: Name is blank
+2024-02-19 22:42:26,891 ERROR Horse: Name is blank
+2024-02-19 22:42:27,252 ERROR Horse: Name is blank
+2024-02-19 22:42:27,266 ERROR Horse: Name is blank
+2024-02-19 22:42:27,278 ERROR Horse: Name is blank
+2024-02-19 22:42:27,297 ERROR Horse: Name is blank
+2024-02-19 22:42:27,536 ERROR Horse: Name is blank
+2024-02-19 22:42:27,564 ERROR Horse: Name is blank
+2024-02-19 22:42:30,326 ERROR Horse: Distance is negative
+2024-02-19 22:42:30,423 ERROR Horse: Distance is negative
+2024-02-19 22:42:30,436 ERROR Horse: Name is null
+2024-02-19 22:42:30,448 ERROR Horse: Name is null
+2024-02-19 22:42:30,454 ERROR Horse: Speed is negative
+2024-02-19 22:42:30,473 ERROR Hippodrome: Horses list is empty
+2024-02-19 22:42:30,783 ERROR Hippodrome: Horses list is null
+2024-02-19 22:42:30,798 ERROR Hippodrome: Horses list is null
+2024-02-19 22:42:30,805 ERROR Hippodrome: Horses list is empty
+2024-02-19 22:55:57,202 ERROR Hippodrome: Horses list is empty
+2024-02-19 22:55:59,045 ERROR Hippodrome: Horses list is null
+2024-02-19 22:55:59,072 ERROR Hippodrome: Horses list is null
+2024-02-19 22:55:59,082 ERROR Hippodrome: Horses list is empty
+2024-02-19 22:55:59,149 ERROR Horse: Speed is negative
+2024-02-19 22:55:59,309 ERROR Horse: Name is blank
+2024-02-19 22:55:59,323 ERROR Horse: Name is blank
+2024-02-19 22:55:59,326 ERROR Horse: Name is blank
+2024-02-19 22:55:59,330 ERROR Horse: Name is blank
+2024-02-19 22:55:59,334 ERROR Horse: Name is blank
+2024-02-19 22:55:59,339 ERROR Horse: Name is blank
+2024-02-19 22:55:59,356 ERROR Horse: Name is blank
+2024-02-19 22:55:59,359 ERROR Horse: Name is blank
+2024-02-19 22:55:59,362 ERROR Horse: Name is blank
+2024-02-19 22:55:59,366 ERROR Horse: Name is blank
+2024-02-19 22:55:59,370 ERROR Horse: Name is blank
+2024-02-19 22:55:59,373 ERROR Horse: Name is blank
+2024-02-19 22:55:59,389 ERROR Horse: Distance is negative
+2024-02-19 22:55:59,418 ERROR Horse: Distance is negative
+2024-02-19 22:55:59,420 ERROR Horse: Name is null
+2024-02-19 22:55:59,423 ERROR Horse: Name is null
+2024-02-19 22:55:59,427 ERROR Horse: Speed is negative
+2024-02-19 23:07:36,887 ERROR Hippodrome: Horses list is empty
+2024-02-19 23:07:38,622 ERROR Hippodrome: Horses list is null
+2024-02-19 23:07:38,640 ERROR Hippodrome: Horses list is null
+2024-02-19 23:07:38,646 ERROR Hippodrome: Horses list is empty
+2024-02-19 23:07:38,734 ERROR Horse: Speed is negative
+2024-02-19 23:07:38,947 ERROR Horse: Name is blank
+2024-02-19 23:07:38,957 ERROR Horse: Name is blank
+2024-02-19 23:07:38,965 ERROR Horse: Name is blank
+2024-02-19 23:07:38,969 ERROR Horse: Name is blank
+2024-02-19 23:07:38,974 ERROR Horse: Name is blank
+2024-02-19 23:07:38,977 ERROR Horse: Name is blank
+2024-02-19 23:07:38,990 ERROR Horse: Name is blank
+2024-02-19 23:07:38,994 ERROR Horse: Name is blank
+2024-02-19 23:07:38,999 ERROR Horse: Name is blank
+2024-02-19 23:07:39,003 ERROR Horse: Name is blank
+2024-02-19 23:07:39,008 ERROR Horse: Name is blank
+2024-02-19 23:07:39,015 ERROR Horse: Name is blank
+2024-02-19 23:07:39,036 ERROR Horse: Distance is negative
+2024-02-19 23:07:39,059 ERROR Horse: Distance is negative
+2024-02-19 23:07:39,062 ERROR Horse: Name is null
+2024-02-19 23:07:39,066 ERROR Horse: Name is null
+2024-02-19 23:07:39,069 ERROR Horse: Speed is negative
