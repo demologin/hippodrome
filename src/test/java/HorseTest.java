@@ -22,13 +22,11 @@ class HorseTest {
     @Order(1)
     @DisplayName("HorseTest: name is null")
     void create_horseWithNullName() {
-        Throwable exception = assertThrows(
+        IllegalArgumentException exception = assertThrows(
             IllegalArgumentException.class,
             () -> new Horse(null, 10.0, 10.0));
 
-        String expectedMessage = "Name cannot be null.";
-        String actualMessage = exception.getMessage();
-        assertEquals(expectedMessage, actualMessage);
+        Assertions.assertEquals("Name cannot be null.", exception.getMessage());
     }
 
     /**
