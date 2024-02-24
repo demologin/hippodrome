@@ -9,7 +9,7 @@ import static org.mockito.Mockito.*;
 
 class HorseTest {
     @Test
-    void whenFirstArgumentIsNullThenThrowIllegalArgumentException() {
+    void whenFirstArgumentIsNull_ThenThrowIllegalArgumentException() {
         IllegalArgumentException exception = assertThrows(IllegalArgumentException.class,
                 () -> new Horse(null, 10, 100));
 
@@ -21,7 +21,7 @@ class HorseTest {
 
     @ParameterizedTest
     @ValueSource(strings = {"", "   ", "\t"})
-    void whenFirstArgumentIsBlankThenThrowIllegalArgumentException(String arg) {
+    void whenFirstArgumentIsBlank_ThenThrowIllegalArgumentException(String arg) {
         IllegalArgumentException exception = assertThrows(IllegalArgumentException.class,
                 () -> new Horse(arg, 10, 100));
 
@@ -33,7 +33,7 @@ class HorseTest {
 
     @ParameterizedTest
     @ValueSource(doubles = {-1, -2, -54, Integer.MIN_VALUE, Double.NEGATIVE_INFINITY})
-    void whenSecondArgumentIsNegativeThenThrowIllegalArgumentException(double arg) {
+    void whenSecondArgumentIsNegative_ThenThrowIllegalArgumentException(double arg) {
         IllegalArgumentException exception = assertThrows(IllegalArgumentException.class,
                 () -> new Horse("Horse", arg, 100));
 
@@ -45,7 +45,7 @@ class HorseTest {
 
     @ParameterizedTest
     @ValueSource(doubles = {-1, -2, -54, Integer.MIN_VALUE, Double.NEGATIVE_INFINITY})
-    void whenThirdArgumentIsNegativeThenThrowIllegalArgumentException(double arg) {
+    void whenThirdArgumentIsNegative_ThenThrowIllegalArgumentException(double arg) {
         IllegalArgumentException exception = assertThrows(IllegalArgumentException.class,
                 () -> new Horse("Horse", 10, arg));
 
@@ -87,7 +87,7 @@ class HorseTest {
 
 
     @Test
-    void moveCallsGetRandomDouble() {
+    void whenMove_ThenCallGetRandomDouble() {
         try (MockedStatic<Horse> mockedHorse = mockStatic(Horse.class)) {
             mockedHorse.when(() -> Horse.getRandomDouble(0.2, 0.9)).thenReturn(0.5);
             Horse horse = new Horse("Name", 10, 100);
@@ -103,7 +103,7 @@ class HorseTest {
             "4, 20, 0.25",
             "100, 1000, 0.672"
     })
-    void moveSetsCorrectDistance(double speed, double distance, double returnValue) {
+    void whenMove_ThenSetCorrectDistance(double speed, double distance, double returnValue) {
         try (MockedStatic<Horse> mockedHorse = mockStatic(Horse.class)) {
             mockedHorse.when(() -> Horse.getRandomDouble(0.2, 0.9)).thenReturn(returnValue);
 

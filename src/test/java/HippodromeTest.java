@@ -17,7 +17,7 @@ import static org.mockito.Mockito.verify;
 class HippodromeTest {
 
     @Test
-    void whenArgumentIsNullThenThrowIllegalArgumentException(){
+    void whenArgumentIsNull_ThenThrowIllegalArgumentException(){
         IllegalArgumentException exception = assertThrows(IllegalArgumentException.class,
                 () -> new Hippodrome(null));
 
@@ -28,7 +28,7 @@ class HippodromeTest {
     }
 
     @Test
-    void whenArgumentIsEmptyListThenThrowIllegalArgumentException(){
+    void whenArgumentIsEmptyList_ThenThrowIllegalArgumentException(){
         IllegalArgumentException exception = assertThrows(IllegalArgumentException.class,
                 () -> new Hippodrome(Collections.emptyList()));
 
@@ -50,7 +50,7 @@ class HippodromeTest {
 
     @Test
     void move(){
-        List<Horse> horses = createMockedHorsesList(50);
+        List<Horse> horses = createMockedHorseList(50);
         Hippodrome hippodrome = new Hippodrome(horses);
 
         hippodrome.move();
@@ -85,7 +85,7 @@ class HippodromeTest {
         return horses;
     }
 
-    private List<Horse> createMockedHorsesList(int number){
+    private List<Horse> createMockedHorseList(int number){
         List<Horse> horses = new ArrayList<>();
         for(int i = 0; i < number; i++){
             horses.add(Mockito.mock(Horse.class));
