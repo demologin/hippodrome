@@ -9,7 +9,7 @@ import org.mockito.MockedStatic;
 import org.mockito.Mockito;
 
 import static org.junit.jupiter.api.Assertions.*;
-@RunWith(Parameterized.class)
+//@RunWith(Parameterized.class)
 class HorseTest {
 
 
