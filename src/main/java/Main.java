@@ -18,7 +18,7 @@ public class Main {
         );
         Hippodrome hippodrome = new Hippodrome(horses);
         log.info("Начало скачек. Количество участников: [{}]", hippodrome.getHorses().size());
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 100; i++) {
             hippodrome.move();
             watch(hippodrome);
             TimeUnit.MILLISECONDS.sleep(200);
