@@ -7,7 +7,6 @@ public class MainTest {
 
     @Test
     @Timeout(value = 22)
-    @Disabled
     void mainTimeTest() throws Exception {
         Main.main(args);
     }
