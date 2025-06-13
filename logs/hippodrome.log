@@ -1,0 +1,96 @@
+2025-06-13 15:52:58,124 INFO  Main: Начало скачек. Количество участников: 7
+2025-06-13 15:52:58,954 INFO  Main: Окончание скачек. Победитель: Pegasus
+2025-06-13 15:57:43,089 INFO  Main: Начало скачек. Количество участников: 6
+2025-06-13 15:57:43,910 INFO  Main: Окончание скачек. Победитель: Blaze
+2025-06-13 16:00:59,436 ERROR Horse: Hippodrome: Horses list is null
+2025-06-13 16:00:59,437 ERROR Horse: Hippodrome: Horses list is null
+2025-06-13 16:00:59,437 ERROR Horse: Hippodrome: Horses list is null
+2025-06-13 16:01:16,305 ERROR Horse: Hippodrome: Horses list is null
+2025-06-13 16:01:16,306 ERROR Horse: Hippodrome: Horses list is null
+2025-06-13 16:01:16,306 ERROR Horse: Hippodrome: Horses list is null
+2025-06-13 16:03:03,512 ERROR Horse: Hippodrome: Horses list is null
+2025-06-13 16:03:03,513 ERROR Horse: Hippodrome: Horse: Name is blank
+2025-06-13 16:03:03,513 ERROR Horse: Hippodrome: Horses list is null
+2025-06-13 16:03:03,513 ERROR Horse: Hippodrome: Horse: Name is blank
+2025-06-13 16:03:03,513 ERROR Horse: Hippodrome: Horses list is null
+2025-06-13 16:03:03,513 ERROR Horse: Hippodrome: Horse: Name is blank
+2025-06-13 16:06:50,127 ERROR Horse: Horse: Name is null
+2025-06-13 16:06:50,128 ERROR Horse: Horse: Name is blank
+2025-06-13 16:06:50,128 ERROR Horse: Horse: Name is null
+2025-06-13 16:06:50,128 ERROR Horse: Horse: Name is blank
+2025-06-13 16:06:50,128 ERROR Horse: Horse: Name is null
+2025-06-13 16:06:50,128 ERROR Horse: Horse: Name is blank
+2025-06-13 16:06:50,128 ERROR Horse: Horse: Name is null
+2025-06-13 16:06:50,128 ERROR Horse: Horse: Name is blank
+2025-06-13 16:06:50,128 ERROR Horse: Horse: Name is null
+2025-06-13 16:06:50,128 ERROR Horse: Horse: Name is blank
+2025-06-13 16:06:50,128 ERROR Horse: Horse: Name is null
+2025-06-13 16:06:50,128 ERROR Horse: Horse: Name is blank
+2025-06-13 16:06:50,128 ERROR Horse: Horse: Name is null
+2025-06-13 16:06:50,128 ERROR Horse: Horse: Name is blank
+2025-06-13 16:06:50,129 DEBUG Hippodrome: Hippodrome: Создание Hippodrome, лошадей 7
+2025-06-13 16:06:50,129 INFO  Main: Начало скачек. Количество участников: 7
+2025-06-13 16:06:50,959 INFO  Main: Окончание скачек. Победитель: Pegasus
+2025-06-13 16:07:30,465 ERROR Horse: Horse: Name is null
+2025-06-13 16:07:30,466 ERROR Horse: Horse: Name is blank
+2025-06-13 16:07:30,466 ERROR Horse: Horse: Name is null
+2025-06-13 16:07:30,466 ERROR Horse: Horse: Name is blank
+2025-06-13 16:07:30,466 ERROR Horse: Horse: Name is null
+2025-06-13 16:07:30,466 ERROR Horse: Horse: Name is blank
+2025-06-13 16:07:30,466 ERROR Horse: Horse: Name is null
+2025-06-13 16:07:30,466 ERROR Horse: Horse: Name is blank
+2025-06-13 16:07:30,466 ERROR Horse: Horse: Name is null
+2025-06-13 16:07:30,466 ERROR Horse: Horse: Name is blank
+2025-06-13 16:07:30,466 ERROR Horse: Horse: Name is null
+2025-06-13 16:07:30,466 ERROR Horse: Horse: Name is blank
+2025-06-13 16:07:30,467 ERROR Horse: Horse: Name is null
+2025-06-13 16:07:30,467 ERROR Horse: Horse: Name is blank
+2025-06-13 16:07:30,468 DEBUG Hippodrome: Создание Hippodrome, лошадей 7
+2025-06-13 16:07:30,468 INFO  Main: Начало скачек. Количество участников: 7
+2025-06-13 16:07:31,291 INFO  Main: Окончание скачек. Победитель: Cherry
+2025-06-13 16:08:33,019 DEBUG Hippodrome: Создание Hippodrome, лошадей 7
+2025-06-13 16:08:33,020 INFO  Main: Начало скачек. Количество участников: 7
+2025-06-13 16:08:33,849 INFO  Main: Окончание скачек. Победитель: Ace of Spades
+2025-06-13 16:09:02,973 ERROR Horse: Name is blank
+2025-06-13 16:09:21,319 ERROR Horse: Name is null
+2025-06-13 16:13:49,798 DEBUG Horse: Создание Horse, имя Bucephalus, скорость 2.4
+2025-06-13 16:13:49,799 DEBUG Horse: Создание Horse, имя Ace of Spades, скорость 2.5
+2025-06-13 16:13:49,799 DEBUG Horse: Создание Horse, имя Zephyr, скорость 2.6
+2025-06-13 16:13:49,799 DEBUG Horse: Создание Horse, имя Blaze, скорость 2.7
+2025-06-13 16:13:49,799 DEBUG Horse: Создание Horse, имя Lobster, скорость 2.8
+2025-06-13 16:13:49,799 DEBUG Horse: Создание Horse, имя Pegasus, скорость 2.9
+2025-06-13 16:13:49,799 DEBUG Horse: Создание Horse, имя Cherry, скорость 3.0
+2025-06-13 16:13:49,800 DEBUG Hippodrome: Создание Hippodrome, лошадей 7
+2025-06-13 16:13:49,800 INFO  Main: Начало скачек. Количество участников: 7
+2025-06-13 16:13:50,625 INFO  Main: Окончание скачек. Победитель: Pegasus
+2025-06-13 16:14:19,835 DEBUG Horse: Создание Horse, имя Bucephalus, скорость 2.4
+2025-06-13 16:14:19,836 ERROR Horse: Distance is negative
+2025-06-13 16:15:32,327 DEBUG Horse: Создание Horse, имя Bucephalus, скорость 2.4
+2025-06-13 16:15:32,329 DEBUG Horse: Создание Horse, имя Ace of Spades, скорость 2.5
+2025-06-13 16:15:32,329 DEBUG Horse: Создание Horse, имя Zephyr, скорость 2.6
+2025-06-13 16:15:32,329 DEBUG Horse: Создание Horse, имя Blaze, скорость 2.7
+2025-06-13 16:15:32,329 DEBUG Horse: Создание Horse, имя Lobster, скорость 2.8
+2025-06-13 16:15:32,329 DEBUG Horse: Создание Horse, имя Pegasus, скорость 2.9
+2025-06-13 16:15:32,329 DEBUG Horse: Создание Horse, имя Cherry, скорость 3.0
+2025-06-13 16:15:32,329 ERROR Hippodrome: Hippodrome: Horses list is null
+2025-06-13 16:16:31,278 ERROR Hippodrome: Hippodrome: Horses list is empty
+2025-06-13 16:16:53,099 DEBUG Horse: Создание Horse, имя Bucephalus, скорость 2.4
+2025-06-13 16:16:53,101 DEBUG Horse: Создание Horse, имя Ace of Spades, скорость 2.5
+2025-06-13 16:16:53,101 DEBUG Horse: Создание Horse, имя Zephyr, скорость 2.6
+2025-06-13 16:16:53,101 DEBUG Horse: Создание Horse, имя Blaze, скорость 2.7
+2025-06-13 16:16:53,101 DEBUG Horse: Создание Horse, имя Lobster, скорость 2.8
+2025-06-13 16:16:53,101 DEBUG Horse: Создание Horse, имя Pegasus, скорость 2.9
+2025-06-13 16:16:53,101 DEBUG Horse: Создание Horse, имя Cherry, скорость 3.0
+2025-06-13 16:16:53,101 DEBUG Hippodrome: Создание Hippodrome, лошадей 7
+2025-06-13 16:16:53,101 INFO  Main: Начало скачек. Количество участников: 7
+2025-06-13 16:16:53,930 INFO  Main: Окончание скачек. Победитель: Pegasus
+2025-06-13 16:18:39,536 DEBUG Horse: Создание Horse, имя Bucephalus, скорость 2.4
+2025-06-13 16:18:39,537 DEBUG Horse: Создание Horse, имя Ace of Spades, скорость 2.5
+2025-06-13 16:18:39,537 DEBUG Horse: Создание Horse, имя Zephyr, скорость 2.6
+2025-06-13 16:18:39,538 DEBUG Horse: Создание Horse, имя Blaze, скорость 2.7
+2025-06-13 16:18:39,538 DEBUG Horse: Создание Horse, имя Lobster, скорость 2.8
+2025-06-13 16:18:39,538 DEBUG Horse: Создание Horse, имя Pegasus, скорость 2.9
+2025-06-13 16:18:39,538 DEBUG Horse: Создание Horse, имя Cherry, скорость 3.0
+2025-06-13 16:18:39,538 DEBUG Hippodrome: Создание Hippodrome, лошадей 7
+2025-06-13 16:18:39,538 INFO  Main: Начало скачек. Количество участников: 7
+2025-06-13 16:18:59,925 INFO  Main: Окончание скачек. Победитель: Cherry
