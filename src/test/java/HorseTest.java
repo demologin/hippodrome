@@ -104,15 +104,15 @@ public class HorseTest {
 
     @ParameterizedTest
     @ValueSource(doubles = {0.2, 0.5, 0.9})
-    public  void moveDistance(double randomValue) {
+    public  void moveDistance(double random) {
         double speed = 2.0;
         double initialDistance = 10.0;
         try (MockedStatic<Horse> mockedStatic = mockStatic(Horse.class)) {
-            mockedStatic.when(() -> Horse.getRandomDouble(0.2, 0.9))
-                    .thenReturn(randomValue);
             Horse horse = new Horse("Test", speed, initialDistance);
+            mockedStatic.when(() -> Horse.getRandomDouble(0.2, 0.9))
+                    .thenReturn(random);
             horse.move();
-            double expected = initialDistance + speed * randomValue;
+            double expected = initialDistance + speed * random;
             assertEquals(expected, horse.getDistance());
         }
         }
