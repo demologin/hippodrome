@@ -42,5 +42,15 @@ public class HippodromeTest {
             verify(horse).move();
         }
     }
+    @Test
+    public void getWinner(){
+        Horse horse1 = new Horse("Pegasus",1,4);
+        Horse horse2 = new Horse("Pegasus",1,2);
+        Horse horse3 = new Horse("Pegasus",1,1);
+        Horse horse4 = new Horse("Pegasus",1,3);
+        Hippodrome hippodrome = new Hippodrome(List.of(horse1,horse2,horse3,horse4));
+
+        assertEquals(horse1, hippodrome.getWinner());
+    }
 
 }
