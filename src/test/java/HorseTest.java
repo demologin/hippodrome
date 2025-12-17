@@ -37,8 +37,15 @@ public class HorseTest {
     }
 
     @Test
-    public void negativeSpeedException() {
-        IllegalArgumentException e = assertThrows(IllegalArgumentException.class, () -> new Horse("Zephyr", -1, 1));
+    void negativeSpeedThrowsException() {
+        assertThrows(IllegalArgumentException.class,
+                () -> new Horse("Test", -1, 1));
+    }
+
+    @Test
+    void negativeSpeedExceptionMessage() {
+        IllegalArgumentException e = assertThrows(IllegalArgumentException.class,
+                () -> new Horse("Test", -1, 1));
 
         assertEquals("Speed cannot be negative.", e.getMessage());
     }
@@ -78,6 +85,24 @@ public class HorseTest {
             new Horse("Zephyr", 1, 1).move();
             mockedStatic.verify(() -> Horse.getRandomDouble(0.2, 0.9));
         }
+    }
+    @ParameterizedTest
+    @ValueSource(doubles = {0.2, 0.5, 0.9})
+    void moveCalculatesCorrectDistance(double random) {
+        try (MockedStatic<Horse> mocked = mockStatic(Horse.class)) {
+            mocked.when(() -> Horse.getRandomDouble(0.2, 0.9))
+                    .thenReturn(random);
+
+            Horse horse = new Horse("Test", 10, 5);
+            horse.move();
+
+            assertEquals(5 + 10 * random, horse.getDistance());
+        }
+    }
+    @Test
+    void distanceIsZeroIfNotPassed() {
+        Horse horse = new Horse("Test", 5);
+        assertEquals(0, horse.getDistance());
     }
 
 }

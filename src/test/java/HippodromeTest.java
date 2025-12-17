@@ -17,18 +17,26 @@ public class HippodromeTest {
 
         assertEquals("Horses cannot be empty.", e.getMessage());
     }
-
     @Test
-    public void getHorses() {
-        List<Horse> horses = new ArrayList<>();
-        for (int i = 0; i < 30; i++) {
-            horses.add(new Horse("" + i, i, i));
-        }
-        Hippodrome hippodrome = new Hippodrome(horses);
-
-        assertEquals(horses, hippodrome.getHorses());
+    void nullHorsesThrowsException() {
+        assertThrows(IllegalArgumentException.class,
+                () -> new Hippodrome(null));
     }
 
+    @Test
+    void nullHorsesExceptionMessage() {
+        IllegalArgumentException e = assertThrows(IllegalArgumentException.class,
+                () -> new Hippodrome(null));
+
+        assertEquals("Horses cannot be null.", e.getMessage());
+    }
+
+    @Test
+    void getHorsesReturnsUnmodifiableList() {
+        Hippodrome hippodrome = new Hippodrome(List.of(new Horse("A",1)));
+        assertThrows(UnsupportedOperationException.class,
+                () -> hippodrome.getHorses().add(new Horse("B",2)));
+    }
     @Test
     public void move() {
         List<Horse> horses = new ArrayList<>();
