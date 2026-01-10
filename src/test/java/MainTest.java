@@ -10,6 +10,7 @@ public class MainTest {
     @Timeout(unit = TimeUnit.SECONDS, value = 22)
     @Disabled
     @DisplayName("durationOfExecution")
-    void durationOfExecution() {
+    void durationOfExecution() throws Exception {
+        Main.main(null);
     }
 }
