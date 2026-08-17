@@ -1,4 +1,8 @@
 <configuration>
+    <root level="DEBUG">
+        <appender-ref ref="FILE"/>
+    </root>
+
     <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <file>logs/hippodrome.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
@@ -6,11 +10,7 @@
             <maxHistory>7</maxHistory>
         </rollingPolicy>
         <encoder>
-<!--            2022-05-31 17:05:26,152 DEBUG Hippodrome: Создание Hippodrome, лошадей [7]-->
             <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level %logger{0}: %msg%n</pattern>
         </encoder>
     </appender>
-    <root level="DEBUG">
-        <appender-ref ref="FILE"/>
-    </root>
 </configuration>
